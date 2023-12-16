@@ -16,12 +16,17 @@
 	<table class="table table-striped table-sm">
 		<tr>
 			<th>Id</th>
-			<th>Category</th>
 			<th>Title</th>
 			<th>Writer</th>
-			<th>Content</th>
+			<th>Genre</th>
+			<th>SongList</th>
+			<th>SongCount</th>
+			<th>Img</th>
+			<th>Playtime</th>
 			<th>Regdate</th>
-			<th>Edit</th>				<td>${u.getCategory()}</td>
+			<th>Edit</th>
+
+			<th>View</th>
 
 			<th>Delete</th>
 		</tr>
@@ -30,9 +35,14 @@
 				<td>${u.getSeq()}</td>
 				<td>${u.getTitle()}</td>
 				<td>${u.getWriter()}</td>
-				<td>${u.getContent()}</td>
+				<td>${u.getGenre()}</td>
+				<td>${u.getSongList()}</td>
+				<td>${u.getSongCount()}</td>
+				<td>${u.getImg()}</td>
 				<td>${u.getRegdate()}</td>
+				<td>${u.getPlaytime()}</td>
 				<td><a href="editform/${u.getSeq()}">Edit</a></td>
+				<td><a href="view/${u.seq}">View</a></td>
 				<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
 			</tr>
 		</c:forEach>

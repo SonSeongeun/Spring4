@@ -6,8 +6,52 @@ public class BoardVO {
     private int seq;
     private String title;
     private String writer;
-    private String category;
-    private String content;
+    private String genre;
+    private String songList;
+    private int songCount;
+    private String img;
+    private String playtime;
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getSongList() {
+        return songList;
+    }
+
+    public void setSongList(String songList) {
+        this.songList = songList;
+    }
+
+    public int getSongCount() {
+        return songCount;
+    }
+
+    public void setSongCount(int songCount) {
+        this.songCount = songCount;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getPlaytime() {
+        return playtime;
+    }
+
+    public void setPlaytime(String playtime) {
+        this.playtime = playtime;
+    }
+
     public int getSeq() {
         return seq;
     }
@@ -31,21 +75,7 @@ public class BoardVO {
     public void setWriter(String writer) {
         this.writer = writer;
     }
-    public String getCategory() {
-        return category;
-    }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 
     public Date getRegdate() {
         return regdate;
@@ -55,15 +85,6 @@ public class BoardVO {
         this.regdate = regdate;
     }
 
-    public int getCnt() {
-        return cnt;
-    }
-
-    public void setCnt(int cnt) {
-        this.cnt = cnt;
-    }
-
     private Date regdate;
-    private  int cnt;
 
 }

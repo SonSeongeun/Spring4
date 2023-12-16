@@ -4,22 +4,25 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
     <insert id="insertBoard">
-        insert into BOARD (category, title, writer, content)
+        insert into playlists (title, writer, genre, songList, songCount, img, playtime)
         values
-        (#{category} , #{title} , #{writer} , #{content})</insert>
+        (#{title} , #{writer} , #{genre} , #{songList} , #{songCount} , #{img} , #{playtime})</insert>
 
     <update id="updateBoard">
-        update BOARD
-        set title=#{title}, content=#{content}, writer=#{writer}, category=#{category} where seq=#{seq}
+        update playlists
+        set title=#{title} , writer=#{writer}, genre=#{genre} , songList=#{songList} , songCount=#{songCount} , img=#{img} , playtime=#{playtime} where seq=#{seq}
     </update>
 
     <delete id="deleteBoard">
-        delete from BOARD where seq=#{seq}
+        delete from playlists where seq=#{seq}
     </delete>
 
     <select id="getBoard" resultType="board">
-        select * from BOARD where seq=#{seq}</select>
+        <![CDATA[
+        select * from playlists where seq=#{seq}
+        ]]>
+    </select>
 
     <select id="getBoardList" resultType="board">
-    select * from BOARD order by seq desc</select>
+    select * from playlists order by seq asc</select>
 </mapper>
