@@ -76,7 +76,7 @@
 			</div>
 		</c:forEach>
 	</div>
-	<a href="${path}/add" class="add-btn">Add New Post</a>
+	<a href="add" class="add-btn">Add New Post</a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>

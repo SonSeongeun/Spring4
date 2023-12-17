@@ -1,31 +1,81 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
-    pageEncoding="UTF-8"%>
-<%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Edit Form</title>
+	<meta charset="UTF-8">
+	<title>Edit Form</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+	<style>
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+
+		.form-container {
+			width: 50%;
+			margin: auto;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+		}
+
+		label {
+			margin-bottom: 5px;
+			display: block;
+		}
+
+		.form-control {
+			width: 100%;
+		}
+
+		.btn {
+			margin-right: 10px;
+		}
+	</style>
 </head>
 <body>
+<div class="container">
+	<h1>Edit Form</h1>
+	<form:form modelAttribute="u" method="POST" action="../editok" class="form-container">
+		<form:hidden path="seq" />
+		<div class="form-group">
+			<label>Title:</label>
+			<form:input path="title" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>Writer:</label>
+			<form:input path="writer" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>Genre:</label>
+			<form:input path="genre" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>SongList:</label>
+			<form:textarea cols="50" rows="5" path="songList" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>SongCount:</label>
+			<form:input path="songCount" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>Img:</label>
+			<form:input path="img" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label>Playtime:</label>
+			<form:input path="playtime" class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-primary">Edit Post</button>
+		<button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+	</form:form>
+</div>
 
-<h1>Edit Form</h1>
-<%--@elvariable id="boardVO" type=""--%>
-<form:form modelAttribute="u" method="POST" action="../editok">
-	<form:hidden path="seq" />
-	<table id = "edit">
-		<tr><td>Title:</td><td><form:input path="title"/></td></tr>
-		<tr><td>Writer:</td><td><form:input path="writer"/></td></tr>
-		<tr><td>Genre:</td><td><form:input path="genre"/></td></tr>
-		<tr><td>SongList:</td><td><form:textarea cols="50" rows="5" path="songList" /></td></tr>
-		<tr><td>SongCount:</td><td><form:input path="songCount"/></td></tr>
-		<tr><td>Img:</td><td><form:input path="img"/></td></tr>
-		<tr><td>Playtime:</td><td><form:input path="playtime"/></td></tr>
-	</table>
-	<tr><td colspan="2">
-	<input type="submit" value="Edit Post"/>
-<input type="button" value="Cancel" onclick="history.back()"/></td></tr>
-</form:form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
