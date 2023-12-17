@@ -12,13 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BoardController {
     @Autowired
     BoardService boardService;
-    //private final BoardService boardService;
 
-    // 생성자를 통해 BoardService 주입
-    //@Autowired
-    //public BoardController(BoardService boardService) {
-        //this.boardService = boardService;
-    //}
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardlist(Model model){
